@@ -1,16 +1,14 @@
 package pro.sky.hw211market;
 
-import org.springframework.context.annotation.Bean;
-import org.springframework.context.annotation.Scope;
 import org.springframework.stereotype.Service;
-import org.springframework.web.context.annotation.SessionScope;
 
 import java.util.List;
 
 @Service
 public class MarketServiceImpl implements MarketService {
 
-    static Basket temp = null;
+    private Basket temp;
+    public MarketServiceImpl(Basket temp) { this.temp = temp; }
 
     @Override
     public Basket add(List<Integer> items) {
@@ -22,8 +20,7 @@ public class MarketServiceImpl implements MarketService {
 
     @Override
     public List<Integer> get() {
-            List<Integer> temporary = temp.getItem();
-        return temporary;
+        return temp.getItem();
     }
 
 }
