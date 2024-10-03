@@ -11,11 +11,11 @@ public class MarketServiceImpl implements MarketService {
     public MarketServiceImpl(Basket temp) { this.temp = temp; }
 
     @Override
-    public Basket add(List<Integer> items) {
+    public String add(List<Integer> items) {
         if (temp == null) {
             temp = new Basket(items);
         } else { temp.addItem(items); }
-        return temp;
+        return "Успех. Добавлены значения: " + items.toString();
     }
 
     @Override

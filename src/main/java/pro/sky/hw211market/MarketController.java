@@ -15,7 +15,7 @@ public class MarketController {
 
     @GetMapping("/add")
     public String add(@RequestParam("items") List<Integer> items) {
-        return serv.add(items).toString();
+        return serv.add(items);
     };
 
     @GetMapping("/get")
